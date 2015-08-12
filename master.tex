@@ -33,21 +33,20 @@
 
 \begin{document}
 
-\maketitle
+%\maketitle
 
 \begin{abstract}
 \acresetall  % reset the acronyms from the title (if any)
-Malignant melanoma is the most dangerous type of skin cancer, yet it is the most treatable kind of cancer, conditioned to its early diagnosis. 
-The early prognosis of melanoma is a challenging task for both clinicians and dermatologists.
-In this regard, Computer Aided Diagnosis systems based on machine learning and image processing techniques have been developed to differentiate melanoma lesions from benign and dysplastic nevi in dermoscopic images. 
-In such systems, preprocessing of the acquired images such as illumination correction and lesion segmentation are critical tasks and have high impacts on the final results. 
-In this paper, we propose a classification framework which does not require prior segmentation of the lesions or illumination correction and is based on sparse coding techniques.
-{\color{red}In this paper, we propose to use sparse coding techniques without prior lesion segmentation or illumination correction for melanoma classification.} 
-%Our proposed framework considers comparison of three sparse coded features such as SIFT, color histograms and statistics and RGB intensity values with Random Forest classifier. 
-Our proposed framework employs Random Forests classifier and sparse representation of three features such as SIFT, color histograms and statistics and RGB intensity values. 
-Our experiments on publicly available $PH^{2}$ dataset with 80\% of the data used for training and the rest for testing testing and 10-fold cross-validation revealed that SIFT sparse coded features achieved the highest performance with Sensitivity and Specificity of 100\% and 90.3\% respectively, with dictionary size of 800 atoms and sparsity level of 2. 
-The obtained results also shows that the dictionary learned from simple RGB intensity values of dermoscopic images achieved comparative results of 100\% Sensitivity and 71.3\% Specificity with smaller dictionary size of 100 atoms. 
-In general the obtained results indicates that dictionary learning techniques can capture strong structure of dermoscopic images and produce discriminant descriptors for classification.
+Malignant melanoma is the most dangerous type of skin cancer, yet it is the most treatable kind of cancer, conditioned by its early diagnosis which is a challenging task for clinicians and dermatologists.
+In this regard, CAD systems based on machine learning and image processing techniques are developed to differentiate melanoma lesions from benign and dysplastic nevi using dermoscopic images. 
+Generally, these frameworks are composed of sequential processes: pre-processing, segmentation, and classification. 
+This architecture faces mainly two challenges: (i) each process is complex with the need to tune a set of parameters, and is specific to a given dataset; (ii) the performance of each process depends on the previous one, and the errors are accumulated throughout the framework. 
+In this paper, we propose a framework for melanoma classification based on sparse coding which does not rely on any pre-processing or lesion segmentation.
+Our framework uses Random Forests classifier and sparse representation of three features: SIFT, color histograms and statistics, and RGB intensities. 
+The experiments are carried out on the public $PH^{2}$ dataset using a 10-fold cross-validation.
+The results show that SIFT sparse-coded feature achieves the highest performance with sensitivity and specificity of 100\% and 90.3\% respectively, with a dictionary size of 800 atoms and a sparsity level of 2. 
+Furthermore, the descriptor based on RGB intensities achieves similar results with sensitivity and specificity of 100\% and 71.3\%, respectively for a smaller dictionary size of 100 atoms. 
+In conclusion, dictionary learning techniques encode strong structures of dermoscopic images and provide discriminant descriptors.
 \end{abstract}
 
 %\keywords{KeyWordA, KeyWordB, KeyWordC}
