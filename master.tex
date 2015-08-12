@@ -37,23 +37,33 @@
 
 \begin{abstract}
 \acresetall  % reset the acronyms from the title (if any)
-\lipsum[1]
+Malignant melanoma is the most dangerous type of skin cancer, yet it is the most treatable kind of cancer, conditioned to its early diagnosis. 
+The early prognosis of melanoma is a challenging task for both clinicians and dermatologists.
+In this regard, Computer Aided Diagnosis systems based on machine learning and image processing techniques have been developed to differentiate melanoma lesions from benign and dysplastic nevi in dermoscopic images. 
+In such systems, preprocessing of the acquired images such as illumination correction and lesion segmentation are critical tasks and have high impacts on the final results. 
+In this paper, we propose a classification framework which does not require prior segmentation of the lesions or illumination correction and is based on sparse coding techniques.
+{\color{red}In this paper, we propose to use sparse coding techniques without prior lesion segmentation or illumination correction for melanoma classification.} 
+%Our proposed framework considers comparison of three sparse coded features such as SIFT, color histograms and statistics and RGB intensity values with Random Forest classifier. 
+Our proposed framework employs Random Forests classifier and sparse representation of three features such as SIFT, color histograms and statistics and RGB intensity values. 
+Our experiments on publicly available $PH^{2}$ dataset with 80\% of the data used for training and the rest for testing testing and 10-fold cross-validation revealed that SIFT sparse coded features achieved the highest performance with Sensitivity and Specificity of 100\% and 90.3\% respectively, with dictionary size of 800 atoms and sparsity level of 2. 
+The obtained results also shows that the dictionary learned from simple RGB intensity values of dermoscopic images achieved comparative results of 100\% Sensitivity and 71.3\% Specificity with smaller dictionary size of 100 atoms. 
+In general the obtained results indicates that dictionary learning techniques can capture strong structure of dermoscopic images and produce discriminant descriptors for classification.
 \end{abstract}
 
-\keywords{KeyWordA, KeyWordB, KeyWordC}
-
-
-%% Incldue the content without .tex extension
-\acresetall  % reset the acronyms from the abstract
-\include*{content/intro/intro}          % the file wihtout .tex
-\include*{content/other/other}
-
-\acknowledgments     %>>>> equivalent to \section*{ACKNOWLEDGMENTS}
-
-This unnumbered section is used to identify those who have aided the authors in understanding or accomplishing the work presented and to acknowledge sources of funding.
-
-\bibliography{./content/lit_review}   %>>>> bibliography data in report.bib
-\bibliographystyle{spiebib}   %>>>> makes bibtex use spiebib.bst
+%\keywords{KeyWordA, KeyWordB, KeyWordC}
+%
+%
+%%% Incldue the content without .tex extension
+%\acresetall  % reset the acronyms from the abstract
+%\include*{content/intro/intro}          % the file wihtout .tex
+%\include*{content/other/other}
+%
+%\acknowledgments     %>>>> equivalent to \section*{ACKNOWLEDGMENTS}
+%
+%This unnumbered section is used to identify those who have aided the authors in understanding or accomplishing the work presented and to acknowledge sources of funding.
+%
+%\bibliography{./content/lit_review}   %>>>> bibliography data in report.bib
+%\bibliographystyle{spiebib}   %>>>> makes bibtex use spiebib.bst
 
 \end{document}
 
