@@ -13,10 +13,10 @@
 %  which replaces the standard style unstr.bst.
 
 \documentclass[letter]{spie}  %>>> use for US letter paper
-%%\documentclass[a4paper]{spie}  %>>> use this instead for A4 paper
-%%\documentclass[nocompress]{spie}  %>>> to avoid compression of citations
-%% \addtolength{\voffset}{9mm}   %>>> moves text field down
-%% \renewcommand{\baselinestretch}{1.65}   %>>> 1.65 for double spacing, 1.25 for 1.5 spacing
+%\documentclass[a4paper]{spie}  %>>> use this instead for A4 paper
+%\documentclass[nocompress]{spie}  %>>> to avoid compression of citations
+% \addtolength{\voffset}{9mm}   %>>> moves text field down
+% \renewcommand{\baselinestretch}{1.65}   %>>> 1.65 for double spacing, 1.25 for 1.5 spacing
 
 %% Latex documents that need direct input
 \input{latex/filesystem/package.tex}        % contains the latex packages
@@ -56,6 +56,9 @@ In conclusion, dictionary learning techniques encode strong structures of dermos
 \acresetall  % reset the acronyms from the abstract
 \include*{content/intro/description} 
 \include*{content/method/method}
+\include*{content/results/experiments}
+\include*{content/results/results}
+\include*{content/conclusion/conclusion}
          % the file wihtout .tex
 %\include*{content/other/other}
 %

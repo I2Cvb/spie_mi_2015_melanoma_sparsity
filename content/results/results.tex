@@ -1,0 +1,29 @@
+\section{Results}
+\label{sec:res}
+The obtained results are represented in terms of their \ac{se} and \ac{sp} in the following. Table~\ref{tab:bestres} lists the 12 highest results considering the three sparsity level, different dictionary sizes and different features.
+ 
+\begin{table*}
+\caption{The 12 highest achieved results respectively from the highest}
+\centering
+%\resizebox{1.\textwidth}{!}{
+\begin{tabular}{l cccc}
+\toprule
+Features &  Dictionary size & Sparsity level & \ac{se} & \ac{sp}\\
+\midrule
+SIFT    & 800 & 2 & 100 & 90.3\\
+$C_{2}$ & 800 & 4 & 100 & 88.4\\
+$C_{2}$ & 1000 & 2 & 100 & 86.8\\
+$C_{3}$ & 1000 & 8 & 100 & 73.8 \\
+$C_{3}$ & 100 & 2 & 100 & 71.7 \\
+SIFT    & 700 & 2 & 98.6 & 84.6 \\
+$C_{3}$ & 600 & 4 & 98.6 & 82.5\\
+$C_{3}$ & 800 & 8 & 97.2 & 83.9\\
+SIFT    & 800 & 4 & 97.1 & 93 \\
+$C_{3}$ & 200 & 4 & 95.8 & 86.6\\
+$C_{3}$ & 900 & 8 & 95.7 & 73.1 \\
+$C_{2}$ & 1000 & 8 & 94.3 & 91.7\\
+\bottomrule
+\end{tabular}
+%}
+\label{tab:tab1}
+\end{table*}

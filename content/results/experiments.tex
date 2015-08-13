@@ -1,0 +1,11 @@
+\section{Experiments}
+\label{sec:exp}
+In this research we used the public $PH^2$ dataset. 
+This dataset was acquired at \textit{Dermatology Service of Hospital Pedro Hispano, Matosinhos, Portugal}. 
+The dataset contains 200 dermoscopic images divided into 160 benign and dysplastic and 40 melanoma lesions. 
+In this study we conducted the experiments on a subset of the dataset which consists of 39 melanoma, 78 benign and 76 dysplastic lesions.
+In 10-folds cross-validation, 80\% of the data is used for training and 20\% for testing.
+Since the dataset is imbalanced in order to reduce the bias of majority class, the minority features are repeated with additional Gaussian noise until a balance training set is achieved.
+The three low-level features are sparsely encoded considering the three sparsity level of [2,4,8] and the dictionary is learned with 10 different atom sizes ranging from 100 to 1000. 
+The classification is performed using \ac{rf} classifier with 100 unpruned trees using gini criterion. 
+ 
