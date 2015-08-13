@@ -1,0 +1,29 @@
+\section{Methodology}
+\label{sec:method}
+% include the figures path relative to the master file
+\graphicspath{ {./content/method/figures/} }
+The proposed method is based on sparse coding techniques. 
+Sparse signal representation has become very popular in the past decades and lead to state-of-the-art results in various applications such as face recognition, image denoising, image inpainting, and image classification. 
+Here we intend to use sparse representation of the dermoscopic images for melanoma classification.
+{\color{red}need more help here}
+The main goal of sparse modeling is to efficiently represent the images as linear combination of a few typical patterns, called atoms, selected from the dictionary. 
+In this regard, SIFT, and two color descriptors are extracted as low-level features from local patches of each image. 
+The first color descriptor consists of Hue and opponent color space angel histogram ($C_{1}$). 
+While the second color descriptor represent the images in the simplest form by concatenating R, G and B intensities ($C_{2}$). 
+These features are extracted from local patches of the dermoscopic images and a sparse dictionary is created using  
+K-SVD algorithm. 
+The K-SVD algorithm is a generalize version of $K$-means clustering, which uses singular value decomposition for creating the sparse represented dictionary.
+By using local patches from the whole dermoscopic images and spares representation of the low-level extracted features, the necessity to perform pre-processing or segmenting the lesions prior to feature extraction and classification are eliminated.
+finally each image is sparsely represented after coding with the learned dictionary and max-pooling and classified using \ac{rf}. 
+
+
+\section{Contribution}
+We present a novel approach using sparse learned dictionary. The presented framework is highly general and adaptable, since no pre-processing or segmentation is required. It also presented that using our framework low-level features such as intensity values can be used directly for classification of the lesions. 
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../../master"
+%%% End: 
