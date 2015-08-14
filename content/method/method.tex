@@ -8,8 +8,8 @@ Here we intend to use sparse representation of the dermoscopic images for melano
 {\color{red}need more help here}
 The main goal of sparse modeling is to efficiently represent the images as linear combination of a few typical patterns, called atoms, selected from the dictionary. 
 In this regard, SIFT, and two color descriptors are extracted as low-level features from local patches of each image. 
-The first color descriptor consists of Hue and opponent color space angel histogram ($C_{1}$). 
-While the second color descriptor represent the images in the simplest form by concatenating R, G and B intensities ($C_{2}$). 
+The first color descriptor consists of Hue and opponent color space angel histogram (\textit{C1}). 
+While the second color descriptor represent the images in the simplest form by concatenating R, G and B intensities (\textit{C2}). 
 These features are extracted from local patches of the dermoscopic images and a sparse dictionary is created using  
 K-SVD algorithm. 
 The K-SVD algorithm is a generalize version of $K$-means clustering, which uses singular value decomposition for creating the sparse represented dictionary.

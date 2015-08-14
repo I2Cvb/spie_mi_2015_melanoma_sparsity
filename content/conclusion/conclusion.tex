@@ -1,2 +1,18 @@
 \section{Conclusion and Future Work}
 \label{sec:con}
+In this work we presented a novel classification framework of melanoma lesions, based on sparse representation of the features. 
+Our framework does not need the primary steps of pre-processing and segmentation of the lesions and provide more general algorithm to solve this problem. 
+We proposed to use a well-known color descriptor based on hue and opponent color space histograms and SIFT as a texture descriptor. We also consider to represent the images in their simplest form and consider the second color descriptor as R,G and B intensity values from the image.
+An extensive comparison based on different dictionary sizes and several sparsity levels were made. 
+These comparison was evaluated on $PH^{2}$ dataset. 
+The obtain results highlight the advantage of the proposed method. 
+where \ac{rf} classifier and sparse representation of SIFT features with a dictionary size of 800 and sparsity level of 2 achieve the highest \ac{se} and \ac{sp} of 100\% and 90.3\%, respectively.
+In future, we would make a comparison of sparse learned dictionary with Bag of word approach and would like to extend our dataset. \\
+
+
+\textbf{Note. This work has not been submitted for publication or presentation elsewhere}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../../master"
+%%% End: 
