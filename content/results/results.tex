@@ -21,7 +21,7 @@ Sparsity level	   & \multicolumn{2}{c}{2}& \multicolumn{2}{c}{4}& \multicolumn{2
 \multicolumn{1}{c}{700} & 92.8 & 89.9 & 72.8 & 91.9 & 54.4 & 95.9 & 37.1 & 75.4 & \cellcolor[gray]{0.8}72.8 &  \cellcolor[gray]{0.8}72 & 80 & 82.6 & \cellcolor[gray]{0.6}98.6 & \cellcolor[gray]{0.6}84.6 & \cellcolor[gray]{0.8}73 & \cellcolor[gray]{0.8}94.8 & 47 & 62.4 \\ 
 \multicolumn{1}{c}{800} & \cellcolor[gray]{0.8}92.9 & \cellcolor[gray]{0.8}81.4 & \cellcolor[gray]{0.4}100  &\cellcolor[gray]{0.4}88.4 & \cellcolor[gray]{0.8}78.5 & \cellcolor[gray]{0.8}89.7 & 40   & 70.9 & 58.6 & 80.1 & \cellcolor[gray]{0.6}97.2 & \cellcolor[gray]{0.6}83.9 & \cellcolor[gray]{0.4}100 & \cellcolor[gray]{0.4}90.3 & \cellcolor[gray]{0.4}97.1 & \cellcolor[gray]{0.4}93 & 48.5 & 72.7\\
 \multicolumn{1}{c}{900} & 90 & 88  & \cellcolor[gray]{0.6}80  & \cellcolor[gray]{0.6}92 & \cellcolor[gray]{0.6}79.9 & \cellcolor[gray]{0.6}95.4 & 25.7 & 81.3 & 19.9 & 91.1 & \cellcolor[gray]{0.8}95.7 & \cellcolor[gray]{0.8}73.1 & \cellcolor[gray]{0.8}95.7 & \cellcolor[gray]{0.8}81.8 & \cellcolor[gray]{0.6}80 & \cellcolor[gray]{0.6}94.5 & \cellcolor[gray]{0.6}54.2 & \cellcolor[gray]{0.6}78.5 \\
-\multicolumn{1}{c}{1000}& \cellcolor[gray]{0.4}100 & \cellcolor[gray]{0.4}86.8 & \cellcolor[gray]{0.8}80 & \cellcolor[gray]{0.8}89.6 & \cellcolor[gray]{0.4}94.3 & \cellcolor[gray]{0.4}91.7 & 34.3 & 70.7 & 42.7 & 76.5 &\cellcolor[gray]{0.4}100  & \cellcolor[gray]{0.4}{\color{blue}73.8} & 90   & 83.5 &  71.4  & 89.8 & 51.3 & 90.3 \\
+\multicolumn{1}{c}{1000}& \cellcolor[gray]{0.4}100 & \cellcolor[gray]{0.4}86.8 & \cellcolor[gray]{0.8}80 & \cellcolor[gray]{0.8}89.6 & \cellcolor[gray]{0.4}94.3 & \cellcolor[gray]{0.4}91.7 & 34.3 & 70.7 & 42.7 & 76.5 &\cellcolor[gray]{0.4}100  & \cellcolor[gray]{0.4}73.8 & 90   & 83.5 &  71.4  & 89.8 & 51.3 & 90.3 \\
 \bottomrule
 \end{tabular}
 }
@@ -41,18 +41,18 @@ Although SIFT and \textit{C1} sparse features achieve the highest result in comp
 \begin{tikzpicture} [scale=.67,every node/.style={scale=0.67}]  %[scale=.68]
 
 \def\labels{
-{\color{blue}\textbf{2}}, 
-{\color{blue}\textbf{2}}, 
-{\color{blue}\textbf{4}}, 
-{\color{blue}\textbf{2}},  
-{\color{blue}\textbf{4}}, 
-{\color{blue}\textbf{8}}, 
-{\color{blue}\textbf{2}},
-{\color{blue}\textbf{4}}, 
-{\color{blue}\textbf{4}}, 
-{\color{blue}\textbf{8}},
-{\color{blue}\textbf{8}},
-{\color{blue}\textbf{8}}
+{\color{dgreen}\textbf{2}}, 
+{\color{dgreen}\textbf{2}}, 
+{\color{dgreen}\textbf{4}}, 
+{\color{dgreen}\textbf{2}},  
+{\color{dgreen}\textbf{4}}, 
+{\color{dgreen}\textbf{8}}, 
+{\color{dgreen}\textbf{2}},
+{\color{dgreen}\textbf{4}}, 
+{\color{dgreen}\textbf{4}}, 
+{\color{dgreen}\textbf{8}},
+{\color{dgreen}\textbf{8}},
+{\color{dgreen}\textbf{8}}
  }
 
 \def\reward{100,98.8,97.1,100,100,94.3,100,98.6,95.8,100,97.2,95.7}
@@ -131,7 +131,7 @@ Although SIFT and \textit{C1} sparse features achieve the highest result in comp
   }  
 \end{tikzpicture}
 }
-\caption{The 12 highest result achieved by \ac{rf} classifier and sparse representation of SIFT, \textit{color1}, and \textit{color2} features with different {\color{blue}\textbf{sparsity levels}} are illustrated in {\color{blue}blue} and black as sensitivity and specificity, respectively, while their dictionary size  is represented in {\color{red}red}. A comparison of the dictionary sizes is also presented in middle of the graph, which contains five levels with maximum dictionary sizes of 1000, 800, 600, 400, 200 for each level respectively.} 
+\caption{The 12 highest result achieved by \ac{rf} classifier and sparse representation of SIFT, \textit{color1}, and \textit{color2} features with different {\color{dgreen}\textbf{sparsity levels}} are illustrated in {\color{blue}blue} and black as sensitivity and specificity, respectively, while their dictionary size  is represented in {\color{red}red}. A comparison of the dictionary sizes is also presented in middle of the graph, which contains five levels with maximum dictionary sizes of 1000, 800, 600, 400, 200 for each level respectively.} 
 \label{fig:besRes}
 \end{figure*}
 
