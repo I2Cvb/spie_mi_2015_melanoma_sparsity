@@ -2,12 +2,12 @@
 \label{sec:res}
 
 \begin{table*}[ht]
-\caption{The obtained results with different dictionary size and sparsity levels. The first and second and third highest results for each sparsity level are highlighted in different shades of gray from dark to light color, respectively and the highest result for each feature set is highlighted in blue color.}
+\caption{The obtained results with different number of atoms and sparsity levels. The first, second, and third highest results for each sparsity level are highlighted in different shades of gray from dark to light color, respectively.}
 \centering
 \resizebox{1.\textwidth}{!}{
 \begin{tabular}{l cccccc		cccccc		cccccc}
 \toprule
-Features &  \multicolumn{6}{c}{Color1}& \multicolumn{6}{c}{Color2} & \multicolumn{6}{c}{SIFT}\\
+Features &  \multicolumn{6}{c}{Color1}& \multicolumn{6}{c}{Color2} & \multicolumn{6}{c}{\ac{sift}}\\
   \cmidrule(r){2-7}  \cmidrule(r){8-13}  \cmidrule(r){14-19}  
 Sparsity level	   & \multicolumn{2}{c}{2}& \multicolumn{2}{c}{4}& \multicolumn{2}{c}{8}& \multicolumn{2}{c}{2} &  \multicolumn{2}{c}{4} & \multicolumn{2}{c}{8}& \multicolumn{2}{c}{2}& \multicolumn{2}{c}{4}& \multicolumn{2}{c}{8}\\ 
   \cmidrule(r){2-3}  \cmidrule(r){4-5} \cmidrule(r){6-7} \cmidrule(r){8-9} \cmidrule(r){10-11} \cmidrule(r){12-13} \cmidrule(r){14-15} \cmidrule(r){16-17} \cmidrule(r){18-19} 
@@ -28,14 +28,7 @@ Sparsity level	   & \multicolumn{2}{c}{2}& \multicolumn{2}{c}{4}& \multicolumn{2
 \label{tab:allres}
 \end{table*}
 
-
-The obtained results of our framework are represented in terms of \ac{se} and \ac{sp} in Table .\ref{tab:allres},. 
-In this table the highest classification rate with respect to each feature and each sparsity level are highlighted in different shades of gray from dark to light, respectively. 
-The obtain results indicate that \textit{C1} and SIFT sparse features perform better with sparsity level of 2 and 4, respectively while \textit{C2} performs better with sparsity level of 8. 
-In general, independent of feature type and sparsity level, better results are achieved with higher dictionary sizes, more specificity dictionaries with more than 600 atoms are preferable. Figure \ref{fig:besRes} illustrate the highest 12 results in general. 
-Although SIFT and \textit{C1} sparse features achieve the highest result in comparison to \textit{C2}, it is notable that \textit{C2} features represent the dermoscopic images in their simplest form and create comparable results. 
-
-\begin{figure*}[t]
+\begin{figure*}
 \centering    
 {
 \begin{tikzpicture} [scale=.67,every node/.style={scale=0.67}]  %[scale=.68]
@@ -134,6 +127,16 @@ Although SIFT and \textit{C1} sparse features achieve the highest result in comp
 \caption{The 12 highest result achieved by \ac{rf} classifier and sparse representation of SIFT, \textit{color1}, and \textit{color2} features with different {\color{dgreen}\textbf{sparsity levels}} are illustrated in {\color{blue}blue} and black as sensitivity and specificity, respectively, while their dictionary size  is represented in {\color{red}red}. A comparison of the dictionary sizes is also presented in middle of the graph, which contains five levels with maximum dictionary sizes of 1000, 800, 600, 400, 200 for each level respectively.} 
 \label{fig:besRes}
 \end{figure*}
+
+
+The results of the experiment are shown in terms of \ac{se} and \ac{sp} in Table~\ref{tab:allres}. 
+The highest classification rate in respect of each feature type and each sparsity level are highlighted in different shades of gray from dark to light. 
+The results show that \emph{C1} and \ac{sift} sparse coded features perform better with sparsity levels of 2 and 4, respectively, while \emph{C2} performs better with sparsity level of 8. 
+In general, larger dictionary sizes lead to better classification performance, independently to the feature type and the sparsity level.
+More precisely, dictionaries with more than 600 atoms are preferable. 
+Figure~\ref{fig:besRes} illustrate the 12 best results. 
+Although, \ac{sift} and \emph{C1} sparse coded features achieve the best classification performance in comparison with \emph{C2}, it can be noted that \emph{C2} features represent the dermoscopic images in their simplest form and create comparable results. 
+
 
 %%% Local Variables: 
 %%% mode: latex
