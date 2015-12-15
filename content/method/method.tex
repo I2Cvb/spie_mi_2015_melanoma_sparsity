@@ -27,7 +27,7 @@ The \ac{sift} implementation used in this work is provided by Vedaldi~\emph{et~a
 
 \item[The opponent color space angle and hue histogram (\emph{C1})] have been first proposed by Van de Weijer and Schmidt as local color features~\cite{van2006coloring}.
 These descriptors are robust to photometric variations (i.e., shadow, shading, specularities, and light source changes) as well as geometrical variations (i.e, viewpoint, zoom, and object orientation).
-The hue and angle of opponent color space are formulated as shown in Eq.\,\ref{eq:hue} and Eq.\,\ref{eq:theta}, respectively.
+The hue ($H_{\mathcal{O}}$) and angle ($\theta_{\mathcal{O}}$) of opponent color space ($\mathcal{O}_{1,2,3}$) are formulated as shown in Eq.\,\ref{eq:hue} and Eq.\,\ref{eq:theta}, respectively.
 The opponent color space transformation is defined as in Eq.\,\ref{eq:opponent}.
 
 \begin{align}
@@ -38,28 +38,60 @@ The opponent color space transformation is defined as in Eq.\,\ref{eq:opponent}.
                       (R-G)/\sqrt{2}\\
                       (R+G-2B)/\sqrt{6}\\
                       (R+G+B)/\sqrt{3}
-                    \end{pmatrix} \label{eq:opponent}\\
-    H^{\mathcal{O}} & = \arctan\left(\frac{\sqrt{3}(R-G)}{R+G-2B}\right)\label{eq:hue}\\
-    \theta_{d}^{\mathcal{O}} & = \arctan\left(\frac{\sqrt{3}(R'_{d}-G'_{d})}{R'_{d}+G'_{d}-2B'_{d}}\right)\label{eq:theta}
+                    \end{pmatrix}\ , \label{eq:opponent}\\
+    H^{\mathcal{O}} & = \arctan\left(\frac{\sqrt{3}(R-G)}{R+G-2B}\right) \ ,\label{eq:hue}\\
+    \theta_{d}^{\mathcal{O}} & = \arctan\left(\frac{\sqrt{3}(R'_{d}-G'_{d})}{R'_{d}+G'_{d}-2B'_{d}}\right)\ , \label{eq:theta}
   \end{align}
 
 \noindent where $d$ denotes the spatial coordinates of ($x$,$y$) and $R'_{d}$, $G'_{d}$, $B'_{d}$ denote the first order derivatives of $RGB$ with respect to the coordinates.
 
+This color descriptor is built by taking a $42$ bins histogram for the opponent angle $\theta^{\mathcal{O}}_{d}$ and the hue channel $H^{\mathcal{O}}$, for a final descriptor size of $84$ dimensions.
+
 \item[The color intensities (\emph{C2})] represent the color information in a simplest form, their intensities.
-This descriptor concatenates the color intensities R, G and B to create the feature descriptor.
+This descriptor concatenates the color intensities $R$, $G$ and $B$ to create the feature descriptor.
 \end{description}
 
 \subsubsection{High-level features}
-High-level descriptor is computed using sparse coding techniques. Sparse signal representation has become very popular in the past decades and lead to state-of-the-art results in various applications such as face recognition~\cite{wright2009robust}, image denoising, image inpainting~\cite{elad2006image}, and image classification~\cite{sidibe2015discrimination}. The main goal of sparse modeling is to efficiently represent the images as linear combination of a few typical patterns, called atoms, selected from the dictionary. Here, we intend to use sparse representation of the low-level extracted features for melanoma classification. Sparse coding consists of three main steps: (i) dictionary learning, (ii) low-level features projection, and (iii) feature pooling~\cite{rubinstein2008efficient}. 
+High-level descriptor is computed using sparse coding techniques. Sparse signal representation has become very popular in the past decades and lead to state-of-the-art results in various applications such as face recognition~\cite{wright2009robust}, image denoising, image inpainting~\cite{elad2006image}, and image classification~\cite{sidibe2015discrimination}. The main goal of sparse modeling is to efficiently represent the images as linear combination of a few typical patterns, called atoms, selected from the dictionary. Here, we intend to use sparse representation of the low-level extracted features for melanoma classification. Sparse coding consists of three main steps: (i) dictionary learning, (ii) low-level features projection, and (iii) feature pooling~\cite{rubinstein2008efficient}.
 
-The dictionary is learned using $K$-SVD which is a generalized version of $K$-means clustering and uses \ac{svd}. The dictionary is built such that:
+
+\begin{description}
+\item[Sparse approximation] Given a dictionary $\mathbf{D} \in \mathbb{R}^{n \times K}$ composed of $K$ atoms and an original signal $\mathbf{y} \in \mathbb{R}^{n}$ (i.e., one feature vector), the sparse approximation corresponds to find the sparest vector $\mathbf{x} \in \mathbb{R}^{K}$ such that:
+
 \begin{equation}
-  \argmin_{\mathbf{x}} \|\mathbf{y} - \mathbf{D}\mathbf{x}\|_{2} \qquad  \text{s.t.} \  \|\mathbf{x}\|_{1} \leq \lambda \,
+  \argmin_{\mathbf{x}}\|\mathbf{y - Dx} \|_{2} \qquad  \text{s.t.} \  \|\mathbf{x}\|_{0} \leq \lambda \, \label{eq:sprapp}
 \end{equation}
 
-\noindent where $\mathbf{y}$ is a low-level descriptor, $\mathbf{x}$ is the sparse coded descriptor (i.e., high-level descriptor) with a sparsity level $\lambda$, and $\mathbf{D}$ is the dictionary with $K$ atoms.
+\noindent where $\lambda$ is a specified sparsity level.
 
-Once the dictionary is learned, each low-level extracted feature from a patch can be projected using $\mathbf{D}$ to form a set of sparse codes. This set is further max-pooled to built a final global descriptor to characterize the whole image.
+Solving the above optimization problem is an NP-hard problem~\cite{elad2010sparse}.
+However, approximate solutions are obtained using greedy algorithms such as \ac{mp}~\cite{mallat1993matching} or \ac{omp}~\cite{pati1993orthogonal,davis1997adaptive}.
+We used the batch-\ac{omp} variant which offers a more efficient algorithm than the standard \ac{omp} for our specific problem~\cite{rubinstein2008efficient}.
+
+\item[Dictionary learning] As stated previously, the sparse approximation is computed given a specific dictionary $\mathbf{D}$, which involves a learning stage from a set of training data.
+This dictionary is learned using $K$-\acs*{svd} which is a generalized version of $K$-means clustering and uses \ac{svd}. 
+The dictionary is built, by iteratively solving the optimization problem of Eq.\,\ref{eq:dct}, by alternatively computing the sparse approximation of $\mathbf{X}$ and the dictionary $\mathbf{D}$.
+
+\begin{equation}
+  \argmin_{\mathbf{D,X}} \|\mathbf{Y} - \mathbf{D}\mathbf{X}\|_{2} \qquad  \text{s.t.} \  \|\mathbf{x}_{i}\|_{1} \leq \lambda \,\label{eq:dct}
+\end{equation}
+
+\noindent where $\mathbf{Y}$ is a training set of low-level descriptors, $\mathbf{X}$ is the associated sparse coded matrix (i.e., set of high-level descriptors) with a sparsity level $\lambda$, and $\mathbf{D}$ is the dictionary with $K$ atoms.
+
+Given $\mathbf{D}$, $\mathbf{X}$ is computed using the batch-\ac{omp} algorithm, while given $\mathbf{X}$, $\mathbf{D}$ is sequentially updated, one atom at a time using \ac{svd}. 
+
+\item[Low-level features projection] Once the dictionary is learned, each set of low-level features $\mathbf{F}_{I} \in \mathbb{R}^{n \times p}$ extracted from $p$ patches in an image is encoded using the dictionary $\mathbf{D}$, solving the optimization problem presented in Eq.\,\ref{eq:sprapp} such that $\mathbf{F}_{I} \simeq \mathbf{DX}_{I}$.
+
+\item[Feature pooling] The sparse coded matrix $\mathbf{X}_{I}$ is max-pooled to build a final descriptor $\mathbf{f}$ characterizing the given image, such that:
+
+\begin{equation}
+  \mathbf{f}_i = \max_{j}\left(|\mathbf{X}_{I}(i,j)|\right), \ \forall i = 1, \cdots, K\ .
+\end{equation}
+
+% This set is further max-pooled to built a final global descriptor to characterize the whole image.
+
+\end{description}
+
 \subsection{Feature classification}
 
 \subsubsection{Over-sampling from imbalanced dataset}
