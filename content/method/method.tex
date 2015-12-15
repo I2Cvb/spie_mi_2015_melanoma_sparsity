@@ -4,7 +4,7 @@
 \graphicspath{ {./content/method/figures/} }
 As mentioned in the Sect.\,\ref{sec:descr}, the proposed framework do not rely on pre-processing an segmentation and focus only on feature detection, extraction and classification.
 
-{\color{red} Add a graph with the classification scheme}
+{\color{red} Add the classification framework graphic}
 
 \subsection{Feature extraction}
 
@@ -52,6 +52,9 @@ This descriptor concatenates the color intensities $R$, $G$ and $B$ to create th
 \end{description}
 
 \subsubsection{High-level features}
+
+{\color{red} Add the sparse coding framework graph}
+
 High-level descriptor is computed using sparse coding techniques. Sparse signal representation has become very popular in the past decades and lead to state-of-the-art results in various applications such as face recognition~\cite{wright2009robust}, image denoising, image inpainting~\cite{elad2006image}, and image classification~\cite{sidibe2015discrimination}. The main goal of sparse modeling is to efficiently represent the images as linear combination of a few typical patterns, called atoms, selected from the dictionary. Here, we intend to use sparse representation of the low-level extracted features for melanoma classification. Sparse coding consists of three main steps: (i) dictionary learning, (ii) low-level features projection, and (iii) feature pooling~\cite{rubinstein2008efficient}.
 
 
@@ -96,12 +99,19 @@ Given $\mathbf{D}$, $\mathbf{X}$ is computed using the batch-\ac{omp} algorithm,
 
 \subsubsection{Over-sampling from imbalanced dataset}
 
+Similarly to Barata~\emph{et~al.}\cite{barata2013two}, the imbalanced issue of the dataset is tackled by over-sampling the samples of the minority class.
+New samples are generated to get a balanced set by randomly repeating original samples of the minority class with an additional Gaussian noise $\mathcal{N}(0, 0.0001)$.
+
 \subsubsection{\acf*{rf}}
 
-The descriptor obtained after max-pooling is used to train and test a \ac{rf} classifier. 
+The classification is performed using a \ac{rf} classifier.
+\Ac{rf} is an ensemble of decision trees~\cite{breiman2001random} which generalizes the classification process by applying two types of randomization: at the tree level, each tree is fed by a bootstrap made of $S'$ samples built from the original data of size $S$ such that  $S=S'$, and at the node level, a subset of feature dimensions $m$ is randomly selected from the original dimension $M$ such that $m=\sqrt{M}$. 
+The trees in \ac{rf} are grown to their maximum length without any pruning.
+Each tree in the ensemble casts a unit vote in the final prediction and the final prediction is based on combination of all the votes. 
+\Ac{rf} is used with 1000 un-pruned trees using gini criterion and the original feature dimension of size {\color{red} TO CHECK $M=\{144,84,228,26,48,74,254,276,302\}$}.
 
-\section{Contribution}
-We propose a classification framework which do not rely on pre-processing and lesion segmentation and is based on sparse coded features. It is also presented that low-level features such as intensity values can be used directly for classification of the lesions within such framework. 
+% \section{Contribution}
+% We propose a classification framework which do not rely on pre-processing and lesion segmentation and is based on sparse coded features. It is also presented that low-level features such as intensity values can be used directly for classification of the lesions within such framework. 
 
 
 
