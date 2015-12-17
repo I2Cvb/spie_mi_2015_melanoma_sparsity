@@ -39,14 +39,14 @@
 \begin{abstract}
 \acresetall  % reset the acronyms from the title (if any)
 Malignant melanoma is the most dangerous type of skin cancer, yet it is the most treatable kind of cancer, conditioned by its early diagnosis which is a challenging task for clinicians and dermatologists.
-In this regard, CAD systems based on machine learning and image processing techniques are developed to differentiate melanoma lesions from benign and dysplastic nevi using dermoscopic images. 
-Generally, these frameworks are composed of sequential processes: pre-processing, segmentation, and classification. 
-This architecture faces mainly two challenges: (i) each process is complex with the need to tune a set of parameters, and is specific to a given dataset; (ii) the performance of each process depends on the previous one, and the errors are accumulated throughout the framework. 
+In this regard, CAD systems based on machine learning and image processing techniques are developed to differentiate melanoma lesions from benign and dysplastic nevi using dermoscopic images.
+Generally, these frameworks are composed of sequential processes: pre-processing, segmentation, and classification.
+This architecture faces mainly two challenges: (i) each process is complex with the need to tune a set of parameters, and is specific to a given dataset; (ii) the performance of each process depends on the previous one, and the errors are accumulated throughout the framework.
 In this paper, we propose a framework for melanoma classification based on sparse coding which does not rely on any pre-processing or lesion segmentation.
-Our framework uses Random Forests classifier and sparse representation of three features: SIFT, Hue and Opponent angle histograms, and RGB intensities. 
+Our framework uses Random Forests classifier and sparse representation of three features: SIFT, Hue and Opponent angle histograms, and RGB intensities.
 The experiments are carried out on the public $PH^{2}$ dataset using a 10-fold cross-validation.
-The results show that SIFT sparse-coded feature achieves the highest performance with sensitivity and specificity of 100\% and 90.3\% respectively, with a dictionary size of 800 atoms and a sparsity level of 2. 
-Furthermore, the descriptor based on RGB intensities achieves similar results with sensitivity and specificity of 100\% and 71.3\%, respectively for a smaller dictionary size of 100 atoms. 
+The results show that SIFT sparse-coded feature achieves the highest performance with sensitivity and specificity of 100\% and 90.3\% respectively, with a dictionary size of 800 atoms and a sparsity level of 2.
+Furthermore, the descriptor based on RGB intensities achieves similar results with sensitivity and specificity of 100\% and 71.3\%, respectively for a smaller dictionary size of 100 atoms.
 In conclusion, dictionary learning techniques encode strong structures of dermoscopic images and provide discriminant descriptors.
 \end{abstract}
 
@@ -55,7 +55,7 @@ In conclusion, dictionary learning techniques encode strong structures of dermos
 
 %% Incldue the content without .tex extension
 \acresetall  % reset the acronyms from the abstract
-\include*{content/intro/introduction} 
+\include*{content/intro/introduction}
 \include*{content/method/method}
 \include*{content/results/experiments}
 \include*{content/results/results}
