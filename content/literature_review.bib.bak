@@ -1,0 +1,286 @@
+% This file was created with JabRef 2.10b2.
+% Encoding: UTF-8
+
+
+@Article{abbasi2004early,
+  Title                    = {Early diagnosis of cutaneous melanoma: revisiting the ABCD criteria},
+  Author                   = {Abbasi, Naheed R and Shaw, Helen M and others},
+  Journal                  = {Jama},
+  Year                     = {2004},
+  Number                   = {22},
+  Pages                    = {2771--2776},
+  Volume                   = {292},
+
+  Publisher                = {American Medical Association}
+}
+
+@InProceedings{barata2014color,
+  Title                    = {Color identification in dermoscopy images using gaussian mixture models},
+  Author                   = {Barata, Catarina and Figueiredo, M{\'a}rio AT and Celebi, M Emre and Marques, Jorge S},
+  Booktitle                = {IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  Year                     = {2014},
+  Organization             = {IEEE},
+  Pages                    = {3611--3615}
+}
+
+@InProceedings{barata2013towards,
+  Title                    = {Towards an automatic bag-of-features model for the classification of dermoscopy images: The influence of segmentation},
+  Author                   = {Barata, Catarina and Marques, Jorge S and Celebi, M Emre},
+  Booktitle                = {8th International Symposium on Image and Signal Processing and Analysis (ISPA)},
+  Year                     = {2013},
+  Organization             = {IEEE},
+  Pages                    = {274--279}
+}
+
+@InCollection{barata2013role,
+  Title                    = {The Role of Keypoint Sampling on the Classification of Melanomas in Dermoscopy Images Using Bag-of-Features},
+  Author                   = {Barata, Catarina and Marques, Jorge S and Rozeira, Jorge},
+  Booktitle                = {Pattern Recognition and Image Analysis},
+  Publisher                = {Springer},
+  Year                     = {2013},
+  Pages                    = {715--723}
+}
+
+@Article{barata2013two,
+  Title                    = {Two Systems for the Detection of Melanomas in Dermoscopy Images Using Texture and Color Features},
+  Author                   = {Barata, C. and Ruela, M. and Francisco, M. and Mendonça, T. and Marques, J.S.},
+  Journal                  = {IEEE Systems Journal,},
+  Year                     = {2014},
+
+  Month                    = {Sept},
+  Number                   = {3},
+  Pages                    = {965-979},
+  Volume                   = {8}
+}
+
+@InCollection{barata2014bag,
+  Title                    = {A Bag-of-Features Approach for the Classification of Melanomas in Dermoscopy Images: The Role of Color and Texture Descriptors},
+  Author                   = {Barata, Catarina and Ruela, Margarida and Mendon{\c{c}}a, Teresa and Marques, Jorge S},
+  Booktitle                = {Computer Vision Techniques for the Diagnosis of Skin Cancer},
+  Publisher                = {Springer},
+  Year                     = {2014},
+  Editor                   = {J. Scharcanski and M. Emre},
+  Pages                    = {49--69}
+}
+
+@Article{breiman2001random,
+  Title                    = {Random forests},
+  Author                   = {Breiman, Leo},
+  Journal                  = {Machine learning},
+  Year                     = {2001},
+  Number                   = {1},
+  Pages                    = {5--32},
+  Volume                   = {45},
+
+  Publisher                = {Springer}
+}
+
+@Article{davis1997adaptive,
+  Title                    = {Adaptive greedy approximations},
+  Author                   = {Davis, Geoff and Mallat, Stephane and Avellaneda, Marco},
+  Journal                  = {Constructive approximation},
+  Year                     = {1997},
+  Number                   = {1},
+  Pages                    = {57--98},
+  Volume                   = {13},
+
+  Publisher                = {Springer}
+}
+
+@Book{elad2010sparse,
+  Title                    = {Sparse and Redundant Representations: From Theory to Applications in Signal and Image Processing},
+  Author                   = {Elad, Michael},
+  Publisher                = {Springer Publishing Company, Incorporated},
+  Year                     = {2010},
+  Edition                  = {1st}
+}
+
+@Article{elad2006image,
+  Title                    = {Image denoising via sparse and redundant representations over learned dictionaries},
+  Author                   = {Elad, Michael and Aharon, Michal},
+  Journal                  = {Image Processing, IEEE Transactions on},
+  Year                     = {2006},
+  Number                   = {12},
+  Pages                    = {3736--3745},
+  Volume                   = {15},
+
+  Publisher                = {IEEE}
+}
+
+@Article{forsea2012melanoma,
+  Title                    = {Melanoma incidence and mortality in Europe: new estimates, persistent disparities},
+  Author                   = {Forsea, AM and Del Marmol, V and de Vries, E and Bailey, EE and Geller, AC},
+  Journal                  = {British Journal of Dermatology},
+  Year                     = {2012},
+  Number                   = {5},
+  Pages                    = {1124--1130},
+  Volume                   = {167},
+
+  Publisher                = {Wiley Online Library}
+}
+
+@Article{korotkov2012computerized,
+  Title                    = {Computerized analysis of pigmented skin lesions: a review},
+  Author                   = {Korotkov, Konstantin and Garcia, Rafael},
+  Journal                  = {Artificial intelligence in medicine},
+  Year                     = {2012},
+  Number                   = {2},
+  Pages                    = {69--90},
+  Volume                   = {56},
+
+  Publisher                = {Elsevier}
+}
+
+@InProceedings{lowe1999object,
+  Title                    = {Object recognition from local scale-invariant features},
+  Author                   = {Lowe, David G},
+  Booktitle                = {Computer vision, 1999. The proceedings of the seventh IEEE international conference on},
+  Year                     = {1999},
+  Organization             = {Ieee},
+  Pages                    = {1150--1157},
+  Volume                   = {2}
+}
+
+@Article{mallat1993matching,
+  Title                    = {Matching pursuits with time-frequency dictionaries},
+  Author                   = {Mallat, St{\'e}phane G and Zhang, Zhifeng},
+  Journal                  = {Signal Processing, IEEE Transactions on},
+  Year                     = {1993},
+  Number                   = {12},
+  Pages                    = {3397--3415},
+  Volume                   = {41},
+
+  Publisher                = {IEEE}
+}
+
+@InProceedings{mendoncca2013ph,
+  Title                    = {PH 2-A dermoscopic image database for research and benchmarking},
+  Author                   = {Mendon{\c{c}}a, Teresa and Ferreira, Pedro M and Marques, Jorge S and Marcal, Andr{\'e} RS and Rozeira, Jorge},
+  Booktitle                = {Engineering in Medicine and Biology Society (EMBC), 2013 35th Annual International Conference of the IEEE},
+  Year                     = {2013},
+  Organization             = {IEEE},
+  Pages                    = {5437--5440}
+}
+
+@InProceedings{pati1993orthogonal,
+  Title                    = {Orthogonal matching pursuit: Recursive function approximation with applications to wavelet decomposition},
+  Author                   = {Pati, Yagyensh Chandra and Rezaiifar, Ramin and Krishnaprasad, PS},
+  Booktitle                = {Signals, Systems and Computers, 1993. 1993 Conference Record of The Twenty-Seventh Asilomar Conference on},
+  Year                     = {1993},
+  Organization             = {IEEE},
+  Pages                    = {40--44}
+}
+
+@Article{rastgoo2015automatic,
+  Title                    = {Automatic differentiation of melanoma from dysplastic nevi},
+  Author                   = {Rastgoo, Mojdeh and Garcia, Rafael and Morel, Olivier and Marzani, Franck},
+  Journal                  = {Computerized Medical Imaging and Graphics},
+  Year                     = {2015},
+  Pages                    = {44--52},
+  Volume                   = {43},
+
+  Publisher                = {Elsevier}
+}
+
+@InProceedings{rastgoo2015ensemble,
+  Title                    = {Ensemble approach for differentiation of malignant melanoma},
+  Author                   = {Rastgoo, Mojdeh and Morel, Olivier and Marzani, Franck and Garcia, Rafael},
+  Booktitle                = {The International Conference on Quality Control by Artificial Vision 2015},
+  Year                     = {2015},
+  Organization             = {International Society for Optics and Photonics},
+  Pages                    = {953415--953415}
+}
+
+@Article{rubinstein2008efficient,
+  Title                    = {Efficient implementation of the K-SVD algorithm using batch orthogonal matching pursuit},
+  Author                   = {Rubinstein, Ron and Zibulevsky, Michael and Elad, Michael},
+  Journal                  = {CS Technion},
+  Year                     = {2008},
+  Number                   = {8},
+  Pages                    = {1--15},
+  Volume                   = {40},
+
+  Url                      = {http://www.cs.technion.ac.il/~ronrubin/software.html}
+}
+
+@InCollection{ruela2013color,
+  Title                    = {What Is the Role of Color Symmetry in the Detection of Melanomas?},
+  Author                   = {Ruela, Margarida and Barata, Catarina and Marques, Jorge S},
+  Booktitle                = {Advances in Visual Computing},
+  Publisher                = {Springer},
+  Year                     = {2013},
+  Pages                    = {1--10}
+}
+
+@Article{sidibe2015discrimination,
+  Title                    = {Discrimination of retinal images containing bright lesions using sparse coded features and SVM},
+  Author                   = {Sidib{\'e}, D{\'e}sir{\'e} and Sadek, Ibrahim and M{\'e}riaudeau, Fabrice},
+  Journal                  = {Computers in biology and medicine},
+  Year                     = {2015},
+  Pages                    = {175--184},
+  Volume                   = {62},
+
+  Publisher                = {Elsevier}
+}
+
+@Other{CancerFactsFigures2014,
+  Title                    = {Cancer facts \& figures 2014},
+  Author                   = {American Cancer Society},
+  Owner                    = {mojdeh},
+  Timestamp                = {2014.11.06},
+  Url                      = {http://www.cancer.org/research/cancerfactsstatistics/cancerfactsfigures2014},
+  Year                     = {2014}
+}
+
+@InCollection{van2006coloring,
+  Title                    = {Coloring local feature extraction},
+  Author                   = {Van De Weijer, Joost and Schmid, Cordelia},
+  Booktitle                = {Computer Vision--ECCV 2006},
+  Publisher                = {Springer},
+  Year                     = {2006},
+  Pages                    = {334--348}
+}
+
+@InProceedings{vedaldi2010vlfeat,
+  Title                    = {VLFeat: An open and portable library of computer vision algorithms},
+  Author                   = {Vedaldi, Andrea and Fulkerson, Brian},
+  Booktitle                = {Proceedings of the international conference on Multimedia},
+  Year                     = {2010},
+  Organization             = {ACM},
+  Pages                    = {1469--1472}
+}
+
+@Article{wright2009robust,
+  Title                    = {Robust face recognition via sparse representation},
+  Author                   = {Wright, John and Yang, Allen Y and Ganesh, Arvind and Sastry, Shankar S and Ma, Yi},
+  Journal                  = {Pattern Analysis and Machine Intelligence, IEEE Transactions on},
+  Year                     = {2009},
+  Number                   = {2},
+  Pages                    = {210--227},
+  Volume                   = {31},
+
+  Publisher                = {IEEE}
+}
+
+@InProceedings{yang2009linear,
+  Title                    = {Linear spatial pyramid matching using sparse coding for image classification},
+  Author                   = {Yang, Jianchao and Yu, Kai and Gong, Yihong and Huang, Tingwen},
+  Booktitle                = {Computer Vision and Pattern Recognition, 2009. CVPR 2009. IEEE Conference on},
+  Year                     = {2009},
+  Organization             = {IEEE},
+  Pages                    = {1794--1801}
+}
+
+@Electronic{WoH,
+  Title                    = {World Health Organization, Skin Cancer},
+  Url                      = {http://www.who.int/uv/faq/skincancer/en/index1.html},
+
+  Owner                    = {lemaitre},
+  Timestamp                = {2015.08.17}
+}
+
+@InProceedings{,
+  Owner                    = {lemaitre},
+  Timestamp                = {2015.12.17}
+}
+

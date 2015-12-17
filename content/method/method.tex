@@ -9,14 +9,20 @@ Figure~\ref{fig:framework} illustrates our proposed framework.
 \subsection{Feature extraction}
 
 \subsubsection{Low-level features}
-In clinical environment, the prognosis of early stage melanoma relies upon visual cues, represented by a set of rules such as ``ABCDE''.
-One well-used cue is variegated colors and difference of color representation between melanoma and benign lesions.
-Textural difference, irregular and sharp borders are another valuable distinguishable tool. 
+In clinical environment, the prognosis of early stage melanoma relies upon visual cues as stated by the ``ABCDE'' rule.
+As introduced in Sect.\,\ref{sec:descr}, this lexicon characterizes cancerous lesions based on their local textures, shapes, and colors from dermoscopic images.
+Thus, in order to mimic clinicians assessment, the choice of low-level features encoding similar contextual information is crucial.
+In that regard, three low-level features in line with the previous requirements are used and presented into details in the remainder of this section.
+Furthermore, these features are locally extracted by partitioning the dermoscopic images into patches.
+
+{\color{red}In clinical environment, the prognosis of early stage melanoma relies upon visual cues, represented by a set of rules such as ``ABCDE''.
+One of the main characteristic is variegated colors and difference of color representation between melanoma and benign lesions.
+Textural difference, irregular and sharp borders are another valuable and distinguishable tool. 
 In this study, three low-level features in line with the previous two discriminative criterion are used.
 Color variation criteria is described through two descriptors: opponent color space angle and hue histogram ($C_{1}$) and R,G,B intensities ($C_{2}$).
 While the texture, gradient and irregular borders is characterized via \ac{sift} descriptor. 
 These descriptors are presented into details in the remainder of this section
-Furthermore, these features are locally extracted by partitioning the dermoscopic images into patches.
+Furthermore, these features are locally extracted by partitioning the dermoscopic images into patches.}
 
 % Low-level feature are used to encode the texture and color aspects of dermoscopic images. In this regard, \ac{sift}~\cite{lowe1999object} (named \emph{\ac{sift}}) and two color descriptors: the first color descriptor consists of Hue and opponent color space angle histogram~\cite{van2006coloring}(named \emph{C1}), and the second color descriptor is based on the concatenation of the R, G and B intensities (named \emph{C2}). All these features are extracted from local patches in the dermoscopic images.
 

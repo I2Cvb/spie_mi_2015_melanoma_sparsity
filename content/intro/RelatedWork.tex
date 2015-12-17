@@ -1,16 +1,15 @@
 \section{Related Work}
 \label{sec:rw}
 In the past decade, numerous approaches have been proposed for automated recognition of melanoma lesions.
-The developed methods were mostly based on clinical or dermoscopy modality.
-These methods commonly follow the usual classification framework of computer vision and consists of common steps of (i) pre-processing, (ii) segmentation, (iii) feature extraction and finally (iv) classification.
+The developed methods were commonly based on clinical or dermoscopy modality.
+These methods follow the usual classification framework of computer vision and consists of four common steps of (i) pre-processing, (ii) segmentation, (iii) feature extraction and finally (iv) classification.
 Korotkov~\emph{et~al.}\cite{korotkov2012computerized} and Rastgoo~\emph{et~al.}\cite{rastgoo2015automatic} summarize these methods and their properties.
-Unfortunately a fair comparison among most of the presented methods in the state of the art is not possible, due to lack of benchmark and common datasets~\cite{rastgoo2015automatic,korotkov2012computerized}.
+Unfortunately a fair comparison among the presented methods in the state of the art is not possible, due to lack of benchmark and common datasets~\cite{rastgoo2015automatic,korotkov2012computerized}.
 Nevertheless recently, thanks to Mendoncca~\emph{et~al.}\cite{mendoncca2013ph}, a public dataset ( PH$^{2}$ ) was resealed for research purposes.
-Section~\ref{sec:dataset} presents a detail description of these dataset.
+Section~\ref{sec:dataset} presents a detail description of this dataset.
 
-Subsequently, in this section we emphasize the most recent method based on the the same dataset.
-%Barata~\emph{et~al.}\cite{barata2013two,barata2013role}, and ruela~\emph{et~al.}\cite{ruela2013role,ruela2013color} used different subsets of PH$^{2}$ dataset in their works~\cite{mendoncca2013ph}.
-%In these works the authors compared the role of shape and colors~\cite{ruela2013role,ruela2013color} for detection of melanoma~vs.~benign and dysplastic lesions using \ac{adb} classifier.
-%In \cite{barata2013two,barata2013towards}, they proposed to use \ac{bow} representation of colors and gradient features.
-%Their results comparing different classifiers, such as \ac{adb}, kernel \ac{svm}, and k-\ac{nn}, indicated that combination of \ac{bow} representation and k-\ac{nn} classifier achieved the best performance with \ac{se} and \ac{sp} of 100$\%$ and 75$\%$, respectively.
-% 
+Subsequently, in this section we emphasize the most recent methods evaluated on the the same dataset.
+Barata~\emph{et~al.}\cite{barata2013two,barata2013role}, and ruela~\emph{et~al.}\cite{ruela2013role,ruela2013color} used different subsets of PH$^{2}$ dataset in their works~\cite{mendoncca2013ph}.
+Ruela~\emph{et~al.}\cite{ruela2013role,ruela2013color} compared the role of shape and colors for detection of melanoma~vs.~benign and dysplastic lesions using \ac{adb} classifier.
+While, concerning the same problem, Barata~\emph{et~al.}\cite{barata2013two,barata2013towards} proposed to use \ac{bow} representation of colors and gradient features.
+Their results comparing different classifiers, such as \ac{adb}, kernel \ac{svm}, and k-\ac{nn}, indicated that combination of \ac{bow} representation and k-\ac{nn} classifier achieved the best performance with \ac{se} and \ac{sp} of 100$\%$ and 75$\%$, respectively.
