@@ -1,8 +1,14 @@
 \section{Experiments}
 \label{sec:exp}
-The experiments are conducted on the public $PH^2$ dataset which is acquired at \textit{Dermatology Service of Hospital Pedro Hispano, Matosinhos, Portugal}~\cite{mendoncca2013ph}. 
-The dataset contains 200 dermoscopic images divided into two classes: (i) 160 benign and dysplastic, and (ii) 40 melanoma lesions. 
-Seven images have been discarded due to artefacts such as hair occlusions; thus, our experiments are conducted on a subset of the dataset consisting of 39 melanoma, 78 benign, and 76 dysplastic lesions.
+The experiments are conducted on the public PH$^2$ dataset.
+This dataset was acquired at \textit{Dermatology Service of Hospital Pedro Hispano, Matosinhos, Portugal}~\cite{mendoncca2013ph} with Tuebinger Mole Analyzer system with a magnification of $20 \times$.
+The 8-bits~RGB color dermoscopic images were obtained under the same conditions with a resolution of $\SI{768}{px} \times \SI{560}{px}$. 
+This dataset contains 200 dermoscopic images divided into 80 benign, 80 dysplastic and 40 melanoma lesions. 
+The lesions are segmented and their histological diagnosis are provided as ground-truth. 
+%Figure~\ref{fig:PH2samples} shows three samples of this dataset, representing melanoma, dysplastic, and benign lesion, respectively. 
+
+In our experiments seven images are discarded due to artefacts such as hair occlusions.
+Thus, they are conducted on a subset of the dataset consisting of 39 melanoma, 78 benign, and 76 dysplastic lesions.
 The patch size used to extract the feature is $\SI{10}{px} \times \SI{10}{px}$.
 The three low-level features are sparsely encoded considering three sparsity levels $\lambda=\{2,4,8\}$ and different number of atoms $K = \{100, 200, \cdots, 1000\}$.
 The classification is performed in a 10-fold cross-validation model in which 80\% of the data is used for training and 20\% for testing. 
