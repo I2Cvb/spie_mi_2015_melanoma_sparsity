@@ -6,10 +6,99 @@ These methods follow the usual classification framework of computer vision and c
 Korotkov~\emph{et~al.}\cite{korotkov2012computerized} and Rastgoo~\emph{et~al.}\cite{rastgoo2015automatic} summarize these methods and their properties.
 Unfortunately a fair comparison among the presented methods in the state of the art is not possible, due to lack of benchmark and common datasets~\cite{rastgoo2015automatic,korotkov2012computerized}.
 Nevertheless recently, thanks to Mendoncca~\emph{et~al.}\cite{mendoncca2013ph}, a public dataset ( PH$^{2}$ ) was resealed for research purposes.
-Section~\ref{sec:dataset} presents a detail description of this dataset.
+Section~\ref{sec:exp} presents a detail description of this dataset.
 
-Subsequently, in this section we emphasize the most recent methods evaluated on the the same dataset.
+Subsequently, in this section we emphasize on the most recent methods which were evaluated using the the same dataset.
+Table~\ref{tab:rw} summarizes these methods.
+
 Barata~\emph{et~al.}\cite{barata2013two,barata2013role}, and ruela~\emph{et~al.}\cite{ruela2013role,ruela2013color} used different subsets of PH$^{2}$ dataset in their works~\cite{mendoncca2013ph}.
 Ruela~\emph{et~al.}\cite{ruela2013role,ruela2013color} compared the role of shape and colors for detection of melanoma~vs.~benign and dysplastic lesions using \ac{adb} classifier.
-While, concerning the same problem, Barata~\emph{et~al.}\cite{barata2013two,barata2013towards} proposed to use \ac{bow} representation of colors and gradient features.
+While, concerning the same problem, Barata~\emph{et~al.}\cite{barata2013two} proposed to use \ac{bow} representation of colors and gradient features.
 Their results comparing different classifiers, such as \ac{adb}, kernel \ac{svm}, and k-\ac{nn}, indicated that combination of \ac{bow} representation and k-\ac{nn} classifier achieved the best performance with \ac{se} and \ac{sp} of 100$\%$ and 75$\%$, respectively.
+The similar classification scheme, \ac{bow} representation, k-\ac{nn} classifier, and histogram of opponent color space histogram, later was used by the same authors for comparing the effects of segmentation~\cite{barata2013towards}.
+In this study the authors compared the performance of their proposed system while automatic segmentation or manual segmentation provided by a specialist were used.
+The obtained results indicated that manual segmentation provided better performance than automatic segmentation (\ac{se} and \ac{sp} of 98\% and 86\%, respectively).
+Random over sampling, in feature space, was used by all the aforementioned methods, in order to deal with imbalance problem. 
+
+PH$^{2}$ dataset was also used by Abuzaghleh~\emph{et~al.}\cite{abuzaghleh2014automated}.
+In this study the authors proposed automated recognition system based on color and shape features such as 2-D \ac{fft2}, \ac{dct2}, size and complexity features.
+The authors proposed two classification approach: (i) multi-class and (ii) two-level classification.
+In both approach \ac{svm} classifier was used.
+In later approach in the first level, normal and abnormal lesions were classified, while in the second level, the abnormal lesions were divided into melanoma and dysplastic lesions.
+
+In our previous work, using the same dataset, we compared the effects of various colors, shape and texture features and ensemble approaches for classification of melanoma lesions~\cite{rastgoo2015ensemble}.
+In this work the features were extracted from the segmented area and \ac{dos} was used instead of \ac{ros}~\cite{rastgoo2015ensemble}.
+Using \ac{rf} ensemble and combination of color and texture features the \ac{se} and \ac{sp} of 94\% and 92\%, was achieved, respectively.
+
+
+%\begin{table}
+\begin{table}
+	\caption{Summary of the proposed classification methods using PH$^{2}$ dataset.}
+\resizebox{1\textwidth}{!}{
+\scriptsize{
+\begin{threeparttable}
+\begin{tabular}{l c c cc	c   c cc}
+\toprule
+Ref & Segmentation & features & \multicolumn{2}{c}{Classification} & Balancing & Validation & \multicolumn{2}{c}{Best performance} \\
+\cmidrule{4-5}\cmidrule{8-9}
+    & 			   & 		  & Classifier & Representation  &           &  & \ac{se} & \ac{sp}\\
+\midrule 
+\multirow{2}{*}{Ruela~\emph{et~al.}}\cite{ruela2013role} & \multirow{2}{*}{$\checkmark$} & Shape, \acs{fd}\tnote{1} & \acs{adb} & - & \ac{ros} & OvA\tnote{1}  & 92 & 74 \\ \\
+\multirow{2}{*}{Ruela~\emph{et~al.}}\cite{ruela2013color} & \multirow{2}{*}{$\checkmark$} & Color statistics & k-\acs{nn}, \acs{adb} & - & \ac{ros} & OvA  & 96 & 83 \\ \\
+\multirow{2}{*}{Barata~\emph{et~al.}\cite{barata2013two}} &  \multirow{2}{*}{$\checkmark$} & Opponent histogram & \acs{adb}, \acs{svm} & \acs{bow} & \multirow{2}{*}{\acs{ros}} & 10-fold\tnote{2} & \multirow{2}{*}{100} & \multirow{2}{*}{75}   \\
+& & HoG & k-\ac{nn} & - &  & OvA &  &\\ \\
+
+Barata~\emph{et~al.}\cite{barata2013towards} & $\checkmark$ & Opponent histogram & k-\acs{nn} & \acs{bow} & \acs{ros} & 10-fold & 98 & 86  \\ \\
+
+
+Abuzaghleh~\emph{et~al.}\cite{abuzaghleh2014automated} & $\checkmark$ & \acs{fft2}, \acs{dct2} & \ac{svm} & - & - & - & 97.7 & - \\ \\
+
+\multirow{3}{*}{Rastgoo~\emph{et~al.}\cite{rastgoo2015ensemble}} & \multirow{3}{*}{$\checkmark$} & Shape, color statistics & \multirow{3}{*}{-} & \multirow{2}{*}{\acs{rf}}  & \multirow{3}{*}{\acs{dos}}& \multirow{3}{*}{OvA} & \multirow{3}{*}{94} & \multirow{3}{*}{92}\\
+&  & opponent angle and Hue histogram & &   &  &  & & \\
+&  & CLBP, GLCM, HoG, Gabor\tnote{3} & & LC\tnote{3} & & & & \\
+\bottomrule
+\end{tabular}
+ \begin{tablenotes}
+  \item[1] \acf{fd}, One versus all (OvA).
+  \item[1] k-fold corss validation.
+  \item[2] Completed Local Binary Pattern (CLBP), Gray-Level Co-occurrence Matrix (GLCM), Histogram of Gradients (HoG), Learner combination (LC).
+  
+%  \item[2] 24 neighbourhood, rotation invariant, uniform and normalized histogram
+%  \item[3] \textit{D} stands for distance in pixel and \textit{G} quantized number of grey levels
+  \end{tablenotes}
+
+\end{threeparttable}
+}}
+\label{tab:rw}
+\end{table}
+
+
+%Barata 1 
+%One vs all 
+%random over sampling 
+%local 10 -fold 
+%global one vs all 
+%
+%
+%Barata 3 Bag of Words 
+%(25 melanomas and 151 nevi).
+%10 fold - classification
+%random over sampling 
+%
+%Barata 2 
+%10 fold classification
+%random over sampling 
+%
+%Ruela 1 and 2 
+%One vs all 
+%random over sampling 
+%
+%Abuzaghleh 
+%75 train, 
+%25 test 
+%Mel, Dys, Nor
+%97.7, 91.3, 90.6 
+%No info about balancing 
+%
+%Rastgoo et al 
+

@@ -212,6 +212,25 @@
   Pages                    = {1--10}
 }
 
+@InProceedings{ruela2013role,
+  Title                    = {On the role of shape in the detection of melanomas},
+  Author                   = {Ruela, Margarida and Barata, Catarina and Mendonca, Teresa and Marques, Jorge S},
+  Booktitle                = {8th International Symposium onImage and Signal Processing and Analysis (ISPA)},
+  Year                     = {2013},
+  Organization             = {IEEE},
+  Pages                    = {268--273}
+}
+
+@Article{satheesha2015early,
+  Title                    = {Early Detection of Melanoma using Color and Shape Geometry Feature},
+  Author                   = {Satheesha, TY and Satyanarayana, D and Prasad, Giri},
+  Journal                  = {Journal of Biomedical Engineering and Medical Imaging},
+  Year                     = {2015},
+  Number                   = {4},
+  Pages                    = {33},
+  Volume                   = {2}
+}
+
 @Article{sidibe2015discrimination,
   Title                    = {Discrimination of retinal images containing bright lesions using sparse coded features and SVM},
   Author                   = {Sidib{\'e}, D{\'e}sir{\'e} and Sadek, Ibrahim and M{\'e}riaudeau, Fabrice},
@@ -277,10 +296,5 @@
 
   Owner                    = {lemaitre},
   Timestamp                = {2015.08.17}
-}
-
-@InProceedings{,
-  Owner                    = {lemaitre},
-  Timestamp                = {2015.12.17}
 }
 
