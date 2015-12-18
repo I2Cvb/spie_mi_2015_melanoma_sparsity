@@ -14,6 +14,15 @@
   Publisher                = {American Medical Association}
 }
 
+@InProceedings{abuzaghleh2014automated,
+  Title                    = {Automated skin lesion analysis based on color and shape geometry feature set for melanoma early detection and prevention},
+  Author                   = {Abuzaghleh, Omar and Barkana, Buket D and Faezipour, Miad},
+  Booktitle                = {Systems, Applications and Technology Conference (LISAT), 2014 IEEE Long Island},
+  Year                     = {2014},
+  Organization             = {IEEE},
+  Pages                    = {1--6}
+}
+
 @InProceedings{barata2014color,
   Title                    = {Color identification in dermoscopy images using gaussian mixture models},
   Author                   = {Barata, Catarina and Figueiredo, M{\'a}rio AT and Celebi, M Emre and Marques, Jorge S},
@@ -151,6 +160,15 @@
   Volume                   = {41},
 
   Publisher                = {IEEE}
+}
+
+@Article{manning2014perception,
+  Title                    = {Perception research in medical imaging},
+  Author                   = {Manning, DJ and Gale, A and Krupinski, EA},
+  Journal                  = {The British journal of radiology},
+  Year                     = {2014},
+
+  Publisher                = {British Institute of Radiology}
 }
 
 @InProceedings{mendoncca2013ph,
