@@ -1,32 +1,41 @@
 \section{Related Work}
 \label{sec:rw}
 In the past decade, numerous approaches have been proposed for automated recognition of melanoma lesions.
-The developed methods were commonly based on clinical or dermoscopy modality.
-These methods follow the usual classification framework of computer vision and consists of four common steps of (i) pre-processing, (ii) segmentation, (iii) feature extraction and finally (iv) classification.
-Korotkov~\emph{et~al.}\cite{korotkov2012computerized} and Rastgoo~\emph{et~al.}\cite{rastgoo2015automatic} summarize these methods and their properties.
-Unfortunately a fair comparison among the presented methods in the state of the art is not possible, due to lack of benchmark and common datasets~\cite{rastgoo2015automatic,korotkov2012computerized}.
-Nevertheless recently, thanks to Mendoncca~\emph{et~al.}\cite{mendoncca2013ph}, a public dataset ( PH$^{2}$ ) was resealed for research purposes.
-Section~\ref{sec:exp} presents a detail description of this dataset.
+The developed methods are commonly based on clinical or dermoscopy modality.
+These methods follow the usual classification framework of computer vision and consists of four common steps: (i) pre-processing, (ii) segmentation, (iii) feature extraction, and (iv) classification.
+%and Rastgoo~\emph{et~al.}\cite{rastgoo2015automatic}
+Korotkov~\emph{et~al.}\cite{korotkov2012computerized} summarizes these methods and their properties.
+Unfortunately a fair comparison among the state of the art presented methods is not possible due to lack of the benchmark and common datasets~\cite{rastgoo2015automatic,korotkov2012computerized}.
+Nevertheless recently a public dataset ( PH$^{2}$ ) has been resealed for research purposes, thanks to Mendoncca~\emph{et~al.}\cite{mendoncca2013ph},.
+Section~\ref{sec:exp} presents a detailed description of this dataset.
 
-Subsequently, in this section we emphasize on the most recent methods which were evaluated using the the same dataset.
+Subsequently, we emphasize on the most recent methods which are evaluated using this dataset.
 Table~\ref{tab:rw} summarizes these methods.
 
 Barata~\emph{et~al.}\cite{barata2013two,barata2013role}, and ruela~\emph{et~al.}\cite{ruela2013role,ruela2013color} used different subsets of PH$^{2}$ dataset in their works~\cite{mendoncca2013ph}.
 Ruela~\emph{et~al.}\cite{ruela2013role,ruela2013color} compared the role of shape and colors for detection of melanoma~vs.~benign and dysplastic lesions using \ac{adb} classifier.
-While, concerning the same problem, Barata~\emph{et~al.}\cite{barata2013two} proposed to use \ac{bow} representation of colors and gradient features.
-Their results comparing different classifiers, such as \ac{adb}, kernel \ac{svm}, and k-\ac{nn}, indicated that combination of \ac{bow} representation and k-\ac{nn} classifier achieved the best performance with \ac{se} and \ac{sp} of 100$\%$ and 75$\%$, respectively.
-The similar classification scheme, \ac{bow} representation, k-\ac{nn} classifier, and histogram of opponent color space histogram, later was used by the same authors for comparing the effects of segmentation~\cite{barata2013towards}.
-In this study the authors compared the performance of their proposed system while automatic segmentation or manual segmentation provided by a specialist were used.
-The obtained results indicated that manual segmentation provided better performance than automatic segmentation (\ac{se} and \ac{sp} of 98\% and 86\%, respectively).
-Random over sampling, in feature space, was used by all the aforementioned methods, in order to deal with imbalance problem. 
+Concerning the same problem, Barata~\emph{et~al.}\cite{barata2013two} proposed to use \ac{bow} representation of colors and gradient features.
+They compared different classifiers, such as \ac{adb}, kernel \ac{svm}, and k-\ac{nn}. 
+Their proposed algorithm achieved the highest \ac{se} and \ac{sp} of 100\% and 75\%, respectively, when \ac{bow} representation with k-\ac{nn} classifier was used.
+%Their obtained results indicated that combination of \ac{bow} representation and k-\ac{nn} classifier achieves the best performance with \ac{se} and \ac{sp} of 100$\%$ and 75$\%$, respectively.
+The authors, later used a similar scheme (\ac{bow} representation, k-\ac{nn} classifier, and histogram of opponent color space histogram) to compare the effects of manual and automatic segmentation in the classification process.
+The results indicate that manual outperformed the automatic segmentation
+Classification frameworks using manual segmentation outperformed the automatic (\ac{se} and \ac{sp} of 98\% and 86\%, respectively).
+%The similar classification scheme, \ac{bow} representation, k-\ac{nn} classifier, and histogram of opponent color space histogram, later was used by the same authors for comparing the effects of segmentation~\cite{barata2013towards}.
+%In this study the authors compared the performance of their proposed system while automatic segmentation or manual segmentation provided by a specialist were used.
+%The obtained results indicated that manual segmentation provided better performance than automatic segmentation (\ac{se} and \ac{sp} of 98\% and 86\%, respectively).
+Feature space, \ac{ros} was used in all the aforementioned methods to tackle the imbalance problem.
+{\color{red}To tackle the imbalance problem, feature space \ac{ros} was used in all the aforementioned methods.}
+%Random over sampling, in feature space, was used by all the aforementioned methods, in order to deal with imbalance problem. 
 
-PH$^{2}$ dataset was also used by Abuzaghleh~\emph{et~al.}\cite{abuzaghleh2014automated}.
+Abuzaghleh~\emph{et~al.}\cite{abuzaghleh2014automated} also used PH$^{2}$ dataset.
 In this study the authors proposed automated recognition system based on color and shape features such as 2-D \ac{fft2}, \ac{dct2}, size and complexity features.
 The authors proposed two classification approach: (i) multi-class and (ii) two-level classification.
-In both approach \ac{svm} classifier was used.
-In later approach in the first level, normal and abnormal lesions were classified, while in the second level, the abnormal lesions were divided into melanoma and dysplastic lesions.
+In both approaches \ac{svm} classifier was used.
+In later approach, in the first level, normal and abnormal lesions were classified, while in the second level, the abnormal lesions were divided into melanoma and dysplastic lesions.
+{\color{red}In later approach, the first level classifies normal and abnormal lesions while the second level works only with the abnormally classified lesions and differentiate melanoma and dysplastic nevi.}
 
-In our previous work, using the same dataset, we compared the effects of various colors, shape and texture features and ensemble approaches for classification of melanoma lesions~\cite{rastgoo2015ensemble}.
+In our previous work, using the same dataset, we compared the effects of various colors, shape and texture features and ensemble approaches~\cite{rastgoo2015ensemble}.
 In this work the features were extracted from the segmented area and \ac{dos} was used instead of \ac{ros}~\cite{rastgoo2015ensemble}.
 Using \ac{rf} ensemble and combination of color and texture features the \ac{se} and \ac{sp} of 94\% and 92\%, was achieved, respectively.
 
@@ -46,7 +55,7 @@ Ref & Segmentation & features & \multicolumn{2}{c}{Classification} & Balancing &
 \multirow{2}{*}{Ruela~\emph{et~al.}}\cite{ruela2013role} & \multirow{2}{*}{$\checkmark$} & Shape, \acs{fd}\tnote{1} & \acs{adb} & - & \ac{ros} & OvA\tnote{1}  & 92 & 74 \\ \\
 \multirow{2}{*}{Ruela~\emph{et~al.}}\cite{ruela2013color} & \multirow{2}{*}{$\checkmark$} & Color statistics & k-\acs{nn}, \acs{adb} & - & \ac{ros} & OvA  & 96 & 83 \\ \\
 \multirow{2}{*}{Barata~\emph{et~al.}\cite{barata2013two}} &  \multirow{2}{*}{$\checkmark$} & Opponent histogram & \acs{adb}, \acs{svm} & \acs{bow} & \multirow{2}{*}{\acs{ros}} & 10-fold\tnote{2} & \multirow{2}{*}{100} & \multirow{2}{*}{75}   \\
-& & HoG & k-\ac{nn} & - &  & OvA &  &\\ \\
+& & gradients & k-\ac{nn} & - &  & OvA &  &\\ \\
 
 Barata~\emph{et~al.}\cite{barata2013towards} & $\checkmark$ & Opponent histogram & k-\acs{nn} & \acs{bow} & \acs{ros} & 10-fold & 98 & 86  \\ \\
 
