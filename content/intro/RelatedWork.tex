@@ -4,40 +4,35 @@ In the past decade, numerous approaches have been proposed for automated recogni
 The developed methods are commonly based on clinical or dermoscopy modality.
 These methods follow the usual classification framework of computer vision and consists of four common steps: (i) pre-processing, (ii) segmentation, (iii) feature extraction, and (iv) classification.
 %and Rastgoo~\emph{et~al.}\cite{rastgoo2015automatic}
-Korotkov~\emph{et~al.}\cite{korotkov2012computerized} summarizes these methods and their properties.
-Unfortunately a fair comparison among the state of the art presented methods is not possible due to lack of the benchmark and common datasets~\cite{rastgoo2015automatic,korotkov2012computerized}.
-Nevertheless recently a public dataset ( PH$^{2}$ ) has been resealed for research purposes, thanks to Mendoncca~\emph{et~al.}\cite{mendoncca2013ph},.
+Korotkov~\emph{et~al.}\cite{korotkov2012computerized} summarize these methods and their properties.
+Unfortunately a fair comparison among the state-of-the-art presented methods is not possible due to lack of a benchmark and common datasets~\cite{rastgoo2015automatic,korotkov2012computerized}.
+Nevertheless recently a public dataset ( PH$^{2}$ ) has been resealed for research purposes, thanks to Mendoncca~\emph{et~al.}\cite{mendoncca2013ph}.
 Section~\ref{sec:exp} presents a detailed description of this dataset.
 
 Subsequently, we emphasize on the most recent methods which are evaluated using this dataset.
-Table~\ref{tab:rw} summarizes these methods.
-
-Barata~\emph{et~al.}\cite{barata2013two,barata2013role}, and ruela~\emph{et~al.}\cite{ruela2013role,ruela2013color} used different subsets of PH$^{2}$ dataset in their works~\cite{mendoncca2013ph}.
-Ruela~\emph{et~al.}\cite{ruela2013role,ruela2013color} compared the role of shape and colors for detection of melanoma~vs.~benign and dysplastic lesions using \ac{adb} classifier.
-Concerning the same problem, Barata~\emph{et~al.}\cite{barata2013two} proposed to use \ac{bow} representation of colors and gradient features.
-They compared different classifiers, such as \ac{adb}, kernel \ac{svm}, and k-\ac{nn}. 
-Their proposed algorithm achieved the highest \ac{se} and \ac{sp} of 100\% and 75\%, respectively, when \ac{bow} representation with k-\ac{nn} classifier was used.
-%Their obtained results indicated that combination of \ac{bow} representation and k-\ac{nn} classifier achieves the best performance with \ac{se} and \ac{sp} of 100$\%$ and 75$\%$, respectively.
-The authors, later used a similar scheme (\ac{bow} representation, k-\ac{nn} classifier, and histogram of opponent color space histogram) to compare the effects of manual and automatic segmentation in the classification process.
-The results indicate that manual outperformed the automatic segmentation
-Classification frameworks using manual segmentation outperformed the automatic (\ac{se} and \ac{sp} of 98\% and 86\%, respectively).
+Table~\ref{tab:rw} summarizes these methods. 
+Barata~\emph{et~al.}\cite{barata2013two,barata2013role} and Ruela~\emph{et~al.}\cite{ruela2013role,ruela2013color} used different subsets of PH$^{2}$ dataset in their works~\cite{mendoncca2013ph}.
+Ruela~\emph{et~al.}\cite{ruela2013role,ruela2013color} compared the role of shape and colors to detect melanoma~vs.~benign and dysplastic lesions using \ac{adb} classifier.
+Concerning the same problem, Barata~\emph{et~al.}\cite{barata2013two} proposed to use \ac{bow} representation of colors and gradient features and compared different classifiers, such as \ac{adb}, kernel \ac{svm}, and k-\ac{nn}.
+The configuration based on \ac{bow} representation and k-\ac{nn} classifier lead to the best results with \ac{se} and \ac{sp} of 100\% and 75\%, respectively.
+%Their proposed algorithm achieved the highest \ac{se} and \ac{sp} of 100\% and 75\%, respectively, when \ac{bow} representation with k-\ac{nn} classifier was used.
+The authors later used a similar scheme (\ac{bow} representation, k-\ac{nn} classifier, and histogram of opponent color space histogram) to compare the effects of manual and automatic segmentation in the classification process.
+The results indicate that manual segmentation outperformed the automatic segmentation (\ac{se} and \ac{sp} of 98\% and 86\%, respectively).
 %The similar classification scheme, \ac{bow} representation, k-\ac{nn} classifier, and histogram of opponent color space histogram, later was used by the same authors for comparing the effects of segmentation~\cite{barata2013towards}.
 %In this study the authors compared the performance of their proposed system while automatic segmentation or manual segmentation provided by a specialist were used.
 %The obtained results indicated that manual segmentation provided better performance than automatic segmentation (\ac{se} and \ac{sp} of 98\% and 86\%, respectively).
 Feature space, \ac{ros} was used in all the aforementioned methods to tackle the imbalance problem.
-{\color{red}To tackle the imbalance problem, feature space \ac{ros} was used in all the aforementioned methods.}
 %Random over sampling, in feature space, was used by all the aforementioned methods, in order to deal with imbalance problem. 
 
-Abuzaghleh~\emph{et~al.}\cite{abuzaghleh2014automated} also used PH$^{2}$ dataset.
-In this study the authors proposed automated recognition system based on color and shape features such as 2-D \ac{fft2}, \ac{dct2}, size and complexity features.
-The authors proposed two classification approach: (i) multi-class and (ii) two-level classification.
-In both approaches \ac{svm} classifier was used.
-In later approach, in the first level, normal and abnormal lesions were classified, while in the second level, the abnormal lesions were divided into melanoma and dysplastic lesions.
-{\color{red}In later approach, the first level classifies normal and abnormal lesions while the second level works only with the abnormally classified lesions and differentiate melanoma and dysplastic nevi.}
+Abuzaghleh~\emph{et~al.}\cite{abuzaghleh2014automated} also used PH$^{2}$ dataset in which they proposed an automated recognition system based on color and shape features such as 2-D \ac{fft2}, \ac{dct2}, size and complexity features.
+The authors proposed two classification approaches: (i) multi-class and (ii) two-level classification, both using \ac{svm} classifier.
+%In both approaches \ac{svm} classifier was used.
+In the latter approach, the first level classifies normal and abnormal lesions while the second level works only with the abnormally classified lesions to differentiate melanoma and dysplastic nevi.
 
-In our previous work, using the same dataset, we compared the effects of various colors, shape and texture features and ensemble approaches~\cite{rastgoo2015ensemble}.
-In this work the features were extracted from the segmented area and \ac{dos} was used instead of \ac{ros}~\cite{rastgoo2015ensemble}.
-Using \ac{rf} ensemble and combination of color and texture features the \ac{se} and \ac{sp} of 94\% and 92\%, was achieved, respectively.
+In our previous work, we compared the effects of various colors, shape and texture features using ensemble approaches~\cite{rastgoo2015ensemble}.
+The features were extracted from the segmented area and \ac{dos} was used instead of \ac{ros}~\cite{rastgoo2015ensemble}.
+The best results with \ac{se} and \ac{sp} of 94\% and 92\%, respectively, was achieved using \ac{rf} ensemble and combination of color and texture features.
+%Using \ac{rf} ensemble and combination of color and texture features the \ac{se} and \ac{sp} of 94\% and 92\%, was achieved, respectively.
 
 
 %\begin{table}
