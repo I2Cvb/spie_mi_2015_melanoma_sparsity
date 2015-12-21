@@ -4,21 +4,21 @@
 \section{Introduction}
 \label{sec:descr}  % \label{} allows reference to this section
 Despite the fact that malignant melanoma only accounts for nearly 2\% of all skin cancer cases, the vast majority of skin cancer deaths are due to malignant melanoma.
-According to the World Health Organisation, during the past decades, the incidence of this pathology has increased up to $132,000$ diagnosed cases of melanoma~\cite{WoH}.
-The \Ac{acs} estimated that during 2014 there would be $76,100$ diagnosed new cases of melanoma, leading to death in $9710$ cases  ~\cite{CancerFactsFigures2014}.
+According to the World Health Organisation, the incidence of this pathology has increased up to $132,000$ diagnosed cases of melanoma~\cite{WoH}, during the past decades.
+The \Ac{acs} estimated that during 2014, $76,100$ new cases of melanoma would be diagnosed, leading to death in $9710$ cases~\cite{CancerFactsFigures2014}.
 At advanced stage, melanoma is incurable and the patients should go through surgery, possibly immunotherapy, chemotherapy, and/or radiation therapy.
-However, if diagnosed at its early stage, melanoma is the most treatable kind of cancer~\cite{CancerFactsFigures2014,forsea2012melanoma}.
+If diagnosed at its early stage, however, melanoma is the most treatable kind of cancer~\cite{CancerFactsFigures2014,forsea2012melanoma}.
 Indeed the patient survival rate has well increased, in the past decades, thanks to early diagnosis and treatment of melanoma in its early stages.
 %Due to this tractability of early detected melanoma, and the efforts done during the last decades to develop methods to detect melanoma at this early stage, the patients' survival rate has well increased.
 
 %Among these methods, systematic screening and consistent criteria for visual inspection of skin lesions' images, acquired through different imaging techniques (\emph{i.e.}\,dermoscopy).
-A well established criteria for early stage melanoma prognosis is the ``ABCDE'' rule~\cite{abbasi2004early} illustrated in \cref{fig:lexicon}.
-This criteria is meant for a human reader to visually inspect an image of a skin lesion, and characterize this lesion based on the following visual cues:
+A well established criteria for early stage melanoma prognosis is the ``ABCDE'' rule~\cite{abbasi2004early} illustrated in~Fig.\,\ref{fig:lexicon}.
+This criteria is meant for a human reader to visually inspect an image of a skin lesion and characterize this lesion based on the following visual cues:
 \begin{enumerate}[label=(\Alph*)]
-\item {\textbf A}symetry of the lesion
-\item irregularity of the lesion {\textbf B}orders
-\item presence of variegated {\textbf C}olors within the lesion
-\item lesion size, evaluating if the {\textbf D}iameter of the lesion is greater than \SI{6}{\milli \meter}
+\item {\textbf A}symetry of the lesion,
+\item irregularity of the lesion {\textbf B}orders,
+\item presence of variegated {\textbf C}olors within the lesion,
+\item lesion size, evaluating if the {\textbf D}iameter of the lesion is greater than \SI{6}{\milli \meter},
 \item evaluation of the lesion {\textbf E}volution over time, through regular screening.
 \end{enumerate}
 
@@ -56,15 +56,17 @@ This criteria is meant for a human reader to visually inspect an image of a skin
 %
 
 Despite the aforesaid positive impact of these methodologies, visual inspection of medical images for diagnosis is prone to errors.
-Manning\,\emph{et\,al.} state that the diagnosis error rates are comparable to the error rates found in any other human visual inspection task ~\cite{manning2014perception}.
-Thus, double readings and \cad systems are placed to aid dermatologists and clinicians to mitigate this weakness.
+Manning\,\emph{et al.} state that the diagnosis error rates are comparable to the error rates found in any other human visual inspection task~\cite{manning2014perception}.
+Thus, double readings and \cad systems are placed to aid dermatologists and clinicians to reduce this weakness.
 %A variety of the proposed \cad systems that take advantage of image processing and \ac{ml} to mimic the criteria defined by the ``ABCDE'' rule~\cite{rastgoo2015automatic}.
-A variety of \cad systems are proposed that take advantage of image processing and \ac{ml} to mimic the criteria defined by the ``ABCDE'' rule~\cite{rastgoo2015automatic}.
-A prevalent schema for such \cad systems, consists of: image pre-processing to facilitate any subsequent task; segmentation to determine the extension of the lesion (emulating the reading of the image by a human grader); feature extraction to characterize the lesion; and further, classification of these features to drive the decision.
-To describe the lesions using highly cognitive terms such as lesion asymmetry or boundary regularity, requires accurate delineation of the lesions. For the clinicians case, finding this delineation is intrinsic to the visual inspection. However, for the case of \cad systems, the delineation is subject to the process of segmentation, which remains an open research topic~\cite{duncan2000medical}.
+A type of \cad systems is proposed which take advantage of image processing and \ac{ml} to mimic the criteria defined by the ``ABCDE'' rule~\cite{rastgoo2015automatic}.
+A prevalent schema for such \cad systems, consists of: (i) \textit{image pre-processing} to facilitate any subsequent task; (ii) \textit{segmentation} to determine the location and region properties of the lesion (likewise the reading of the image by a human grader); (iii) \textit{feature extraction} to characterize the lesion; and further, (iv) \textit{classification} of these features to drive the decision.
+Towards diagnosis, accurate delineations are required to describe the lesions with highly cognitive criteria, such as asymmetry or boundary irregularities.
+%To describe the lesions using highly cognitive terms such as lesion asymmetry or boundary regularity, requires accurate delineation of the lesions. 
+For the clinicians, finding this delineation is intrinsic to the visual inspection. 
+For the case of \cad systems, however, the delineation is subject to the process of segmentation, which remains an open research topic~\cite{duncan2000medical}.
 
-In this paper, we propose a more general framework which does not need pre-processing and segmentation of the lesions and is based on sparse coded features and \ac{rf} classifier~\cite{breiman2001random} to detect melanoma in dermoscopic images.
-
+In this paper, we propose a more general framework which does not rely upon pre-processing and segmentation of the lesions and is based on sparse coded features and \ac{rf} classifier~\cite{breiman2001random} to detect melanoma in dermoscopic images.
 The rest of this paper is organized as follows: an overview of related work is presented in Sect.\,\ref{sec:rw}.
 The proposed method is discuss in Sect.\,\ref{sec:method} while the experiment and obtained results are presented in Sect.\,\ref{sec:exp} and\,\ref{sec:res}, respectively.
 Finally the paper is concluded in Sect.\,\ref{sec:con}.
