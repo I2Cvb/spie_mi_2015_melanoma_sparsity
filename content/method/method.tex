@@ -114,7 +114,7 @@ New samples are generated to get a balanced set by randomly repeating original s
 
 \subsubsection{\acf*{rf}}
 
-The classification is performed using a \ac{rf} classifier\footnotesize{The implementation used can be found at:\texttt{https://code.google.com/p/randomforest-matlab/}}.
+The classification is performed using a \ac{rf} classifier\footnote{The implementation used can be found at: \url{https://code.google.com/p/randomforest-matlab/}}.
 \Ac{rf} is an ensemble of decision trees~\cite{breiman2001random} which generalizes the classification process by applying two types of randomization: at the tree level, each tree is fed by a bootstrap made of $S'$ samples built from the original data of size $S$ such that  $S=S'$, and at the node level, a subset of feature dimensions $m$ is randomly selected from the original dimension $M$ such that $m=\sqrt{M}$. 
 The trees in \ac{rf} are grown to their maximum length without any pruning.
 Each tree in the ensemble casts a unit vote in the final prediction and the final prediction is based on combination of all the votes. 
